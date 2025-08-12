@@ -1,11 +1,15 @@
-// public/src/js/leaderboard.js
 (function () {
   const boardList = document.getElementById("boardList");
   const sheet  = document.getElementById("rankSheet");
   const podium = document.querySelector(".podium");
   const winner = document.querySelector(".winner");
-  const periodSelect = document.getElementById("periodSelect");
-  if (!boardList || !sheet || !podium || !winner || !periodSelect) return;
+  const selectedPeriod = document.getElementById("selectedPeriod");
+  const periodOptions = document.querySelectorAll(".period-option");
+  const periodTrigger = document.getElementById("periodTrigger");
+  const modalEl = document.getElementById("periodModal");
+  if (!boardList || !sheet || !podium || !winner || !selectedPeriod || !modalEl) return;
+
+  const periodModal = bootstrap.Modal.getOrCreateInstance(modalEl);
 
   const FILES = {
     "2025-10-11": "src/data/okt-nov-2025.json",
@@ -16,20 +20,31 @@
   const GAP=8, RADIUS_FIX=20, MIN_TOP=12, PADDING_SAFE=12, MIN_LIST_SPACE=140;
   const initials = (name)=> name.split(/\s+/).slice(0,2).map(s=>s[0]?.toUpperCase()||"").join("");
 
-  function placeSheetAndResize(){
-    const vh = window.innerHeight;
-    const podiumBottom = podium.getBoundingClientRect().bottom;
-    const desiredTop = Math.max(MIN_TOP, Math.round(podiumBottom - RADIUS_FIX + GAP));
-    const currentTop = sheet.getBoundingClientRect().top;
-    let offset = desiredTop - currentTop; if (offset < 0) offset = 0;
-    sheet.style.transform = `translateY(${offset}px)`;
-    const winnerH = winner.getBoundingClientRect().height || 0;
-    let available = Math.max(MIN_LIST_SPACE, vh - desiredTop - winnerH - PADDING_SAFE);
-    const cs = getComputedStyle(sheet);
-    const inner = Math.max(100, available - (parseFloat(cs.paddingTop)||0) - (parseFloat(cs.paddingBottom)||0));
-    const board = document.querySelector(".board");
-    if (board){ board.style.maxHeight = `${inner}px`; board.style.overflowY = "auto"; }
+function placeSheetAndResize(){
+  const vh = window.innerHeight;
+  const podiumBottom = podium.getBoundingClientRect().bottom;
+  const desiredTop = Math.max(MIN_TOP, Math.round(podiumBottom - RADIUS_FIX + GAP));
+  const currentTop = sheet.getBoundingClientRect().top;
+  let offset = desiredTop - currentTop; if (offset < 0) offset = 0;
+  sheet.style.transform = `translateY(${offset}px)`;
+
+  const winnerH = winner.getBoundingClientRect().height || 0;
+  const cs = getComputedStyle(sheet);
+  const padTop = parseFloat(cs.paddingTop) || 0;
+  const padBottom = parseFloat(cs.paddingBottom) || 0;
+  const gapY = parseFloat(cs.gap || cs.rowGap || 0) || 0; // <— baru
+  const handleH = sheet.querySelector('.sheet-handle')?.getBoundingClientRect().height || 0; // <— baru
+
+  const available = Math.max(MIN_LIST_SPACE, vh - desiredTop - winnerH - PADDING_SAFE);
+  const inner = Math.max(100, available - padTop - padBottom - gapY - handleH); // <— disesuaikan
+
+  const board = document.querySelector(".board");
+  if (board){
+    board.style.maxHeight = `${inner}px`;
+    board.style.overflowY = "auto";
   }
+}
+
 
   function render(data){
     const sorted = [...data].sort((a,b)=> b.score - a.score || a.name.localeCompare(b.name));
@@ -89,15 +104,44 @@
   }
 
   window.addEventListener("load", ()=>{
-    loadPeriod(periodSelect.value);
+    const active = document.querySelector(".period-option.active");
+    if (active) loadPeriod(active.dataset.value);
     requestAnimationFrame(placeSheetAndResize);
   });
 
   window.addEventListener("resize", placeSheetAndResize);
 
-  periodSelect.addEventListener("change", ()=>{
-    loadPeriod(periodSelect.value);
-    const label = periodSelect.options[periodSelect.selectedIndex].text.trim();
-    toast(`Periode diubah ke: ${label}`, "success");
+  periodTrigger.addEventListener("click", ()=>{
+    periodModal.show();
+  });
+
+  modalEl.addEventListener("shown.bs.modal", ()=>{
+    periodTrigger.setAttribute("aria-expanded","true");
+  });
+  modalEl.addEventListener("hidden.bs.modal", ()=>{
+    periodTrigger.setAttribute("aria-expanded","false");
+    document.querySelectorAll(".modal-backdrop").forEach(b=>b.remove());
+    document.body.classList.remove("modal-open");
+    document.body.style.removeProperty("paddingRight");
+    periodTrigger.focus();
+  });
+
+  // CHANGE period
+  periodOptions.forEach(opt=>{
+    opt.addEventListener("click", ()=>{
+      periodOptions.forEach(o=>o.classList.remove("active"));
+      opt.classList.add("active");
+
+      const label = (opt.firstChild?.nodeType === Node.TEXT_NODE)
+        ? opt.firstChild.nodeValue.trim()
+        : opt.textContent.trim();
+      selectedPeriod.textContent = label;
+
+      loadPeriod(opt.dataset.value);
+
+      periodModal.hide();
+
+      toast(`Periode diubah ke: ${label}`, "success");
+    });
   });
 })();

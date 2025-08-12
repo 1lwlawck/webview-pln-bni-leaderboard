@@ -46,3 +46,27 @@ img{
   display:block;
   margin:12px auto;
 }
+
+.reward-table {
+  font-family: 'Nunito Sans', sans-serif;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 13px; /* lebih kecil */
+  width: auto; /* tidak full */
+}
+
+.reward-table th,
+.reward-table td {
+  text-align: center;
+  border: 1px solid #000; /* Hitam */
+  padding: 4px 8px; /* lebih kecil */
+}
+
+.reward-table thead th {
+  background-color: #d9d9d9; /* abu mirip gambar */
+  font-weight: 700;
+}
+
+.reward-table tbody tr.fw-bold td {
+  font-weight: 700;
+}

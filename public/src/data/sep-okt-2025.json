@@ -1,52 +1,402 @@
 [
-  { "name": "Dewi Lestari", "score": 2060 },
-  { "name": "Budi Santoso", "score": 2057 },
-  { "name": "Joko Santoso", "score": 2055 },
-  { "name": "Rani Sari", "score": 2052 },
-  { "name": "Andi Prabowo", "score": 2050 },
-  { "name": "Rudi Hartono", "score": 2048 },
-  { "name": "Lina Susanti", "score": 2046 },
-  { "name": "Nina Kartika", "score": 2044 },
-  { "name": "Siti Aminah", "score": 2042 },
-  { "name": "Ahmad Ali", "score": 2040 },
-  { "name": "Dina Fitri", "score": 2038 },
-  { "name": "Yudi Yana", "score": 2036 },
-  { "name": "Gita Sari", "score": 2034 },
-  { "name": "Hendra Gunawan", "score": 2032 },
-  { "name": "Indah Puspita", "score": 2030 },
-  { "name": "Karin Wulandari", "score": 2028 },
-  { "name": "Lutfi Ramadhan", "score": 2026 },
-  { "name": "Maya Sari", "score": 2024 },
-  { "name": "Oki Prasetyo", "score": 2022 },
-  { "name": "Putri Maharani", "score": 2020 },
-  { "name": "Qori Ananda", "score": 2018 },
-  { "name": "Rizky Kurniawan", "score": 2016 },
-  { "name": "Salsa Aurelia", "score": 2015 },
-  { "name": "Tono Setiawan", "score": 2013 },
-  { "name": "Ucup Saeful", "score": 2011 },
-  { "name": "Vina Anggraini", "score": 2009 },
-  { "name": "Wahyu Hidayat", "score": 2008 },
-  { "name": "Yanti Marlina", "score": 2006 },
-  { "name": "Zahra Khairunnisa", "score": 2004 },
-  { "name": "Bayu Firmansyah", "score": 2003 },
-  { "name": "Cahya Nurhaliza", "score": 2001 },
-  { "name": "Dedi Pratama", "score": 1999 },
-  { "name": "Eka Saputra", "score": 1997 },
-  { "name": "Farhan Maulana", "score": 1996 },
-  { "name": "Gilang Ramadhan", "score": 1994 },
-  { "name": "Hanif Fadillah", "score": 1992 },
-  { "name": "Intan Permata", "score": 1991 },
-  { "name": "Jihan Azzahra", "score": 1989 },
-  { "name": "Kevin Pratama", "score": 1988 },
-  { "name": "Larasati Putri", "score": 1986 },
-  { "name": "Mahendra Putra", "score": 1984 },
-  { "name": "Naufal Hakim", "score": 1983 },
-  { "name": "Olivia Syifa", "score": 1981 },
-  { "name": "Prasetyo Adi", "score": 1980 },
-  { "name": "Queena Safira", "score": 1978 },
-  { "name": "Rafael Adrian", "score": 1977 },
-  { "name": "Syifa Rahmadani", "score": 1975 },
-  { "name": "Tasya Kirana", "score": 1974 },
-  { "name": "Usman Siregar", "score": 1972 },
-  { "name": "Vino Prayoga", "score": 1971 }
+  {
+    "name": "Qori Rahma",
+    "score": 2000
+  },
+  {
+    "name": "Maya Rahma",
+    "score": 1989
+  },
+  {
+    "name": "Feri Putri",
+    "score": 1978
+  },
+  {
+    "name": "Indah Marlina",
+    "score": 1967
+  },
+  {
+    "name": "Oni Santoso",
+    "score": 1956
+  },
+  {
+    "name": "Fikri Andriana",
+    "score": 1945
+  },
+  {
+    "name": "Rama Suryani",
+    "score": 1934
+  },
+  {
+    "name": "Haryanto Zulfikar",
+    "score": 1923
+  },
+  {
+    "name": "Feri Oktaviani",
+    "score": 1912
+  },
+  {
+    "name": "Pandu Fauzi",
+    "score": 1901
+  },
+  {
+    "name": "Uli Susanti",
+    "score": 1890
+  },
+  {
+    "name": "Evi Pratama",
+    "score": 1879
+  },
+  {
+    "name": "Cahyo Wijaya",
+    "score": 1868
+  },
+  {
+    "name": "Kurniawan Ayu",
+    "score": 1857
+  },
+  {
+    "name": "Ida Safitri",
+    "score": 1846
+  },
+  {
+    "name": "Sari Maulana",
+    "score": 1835
+  },
+  {
+    "name": "Prita Suryani",
+    "score": 1824
+  },
+  {
+    "name": "Eka Oktaviani",
+    "score": 1813
+  },
+  {
+    "name": "Lina Maulana",
+    "score": 1802
+  },
+  {
+    "name": "Gita Lestari",
+    "score": 1791
+  },
+  {
+    "name": "Sari Maharani",
+    "score": 1780
+  },
+  {
+    "name": "Umar Marlina",
+    "score": 1769
+  },
+  {
+    "name": "Prita Pratama",
+    "score": 1758
+  },
+  {
+    "name": "Santi Firmansyah",
+    "score": 1747
+  },
+  {
+    "name": "Andi Aisyah",
+    "score": 1736
+  },
+  {
+    "name": "Rama Susanti",
+    "score": 1725
+  },
+  {
+    "name": "Putri Prameswari",
+    "score": 1714
+  },
+  {
+    "name": "Kurniawan Pratama",
+    "score": 1703
+  },
+  {
+    "name": "Dodi Firmansyah",
+    "score": 1692
+  },
+  {
+    "name": "Joko Abidin",
+    "score": 1681
+  },
+  {
+    "name": "Xavier Adi",
+    "score": 1670
+  },
+  {
+    "name": "Gilang Andriana",
+    "score": 1659
+  },
+  {
+    "name": "Yani Firmansyah",
+    "score": 1648
+  },
+  {
+    "name": "Indah Ayu",
+    "score": 1637
+  },
+  {
+    "name": "Mega Santoso",
+    "score": 1626
+  },
+  {
+    "name": "Ida Ayu",
+    "score": 1615
+  },
+  {
+    "name": "Putri Andriana",
+    "score": 1604
+  },
+  {
+    "name": "Novi Putri",
+    "score": 1593
+  },
+  {
+    "name": "Andi Putri",
+    "score": 1582
+  },
+  {
+    "name": "Santi Marlina",
+    "score": 1571
+  },
+  {
+    "name": "Bunga Saputra",
+    "score": 1560
+  },
+  {
+    "name": "Wulan Prasetyo",
+    "score": 1549
+  },
+  {
+    "name": "Putra Prameswari",
+    "score": 1538
+  },
+  {
+    "name": "Jihan Gunawan",
+    "score": 1527
+  },
+  {
+    "name": "Vega Permadi",
+    "score": 1516
+  },
+  {
+    "name": "Lina Prasetyo",
+    "score": 1505
+  },
+  {
+    "name": "Wulan Permata",
+    "score": 1494
+  },
+  {
+    "name": "Kania Maharani",
+    "score": 1483
+  },
+  {
+    "name": "Dewi Oktaviani",
+    "score": 1472
+  },
+  {
+    "name": "Jefri Firmansyah",
+    "score": 1461
+  },
+  {
+    "name": "Zahra Prameswari",
+    "score": 1450
+  },
+  {
+    "name": "Uci Pratama",
+    "score": 1439
+  },
+  {
+    "name": "Meli Syahputra",
+    "score": 1428
+  },
+  {
+    "name": "Haryanto Andriana",
+    "score": 1417
+  },
+  {
+    "name": "Joko Prameswari",
+    "score": 1406
+  },
+  {
+    "name": "Ida Abidin",
+    "score": 1395
+  },
+  {
+    "name": "Qalila Santoso",
+    "score": 1384
+  },
+  {
+    "name": "Jihan Wulandari",
+    "score": 1373
+  },
+  {
+    "name": "Vera Wijaya",
+    "score": 1362
+  },
+  {
+    "name": "Muhammad Wijaya",
+    "score": 1351
+  },
+  {
+    "name": "Hani Permata",
+    "score": 1340
+  },
+  {
+    "name": "Vega Pratama",
+    "score": 1329
+  },
+  {
+    "name": "Qori Suryani",
+    "score": 1318
+  },
+  {
+    "name": "Maya Oktaviani",
+    "score": 1307
+  },
+  {
+    "name": "Evi Safitri",
+    "score": 1296
+  },
+  {
+    "name": "Joko Permadi",
+    "score": 1285
+  },
+  {
+    "name": "Dian Firmansyah",
+    "score": 1274
+  },
+  {
+    "name": "Dodi Rahma",
+    "score": 1263
+  },
+  {
+    "name": "Siska Wijaya",
+    "score": 1252
+  },
+  {
+    "name": "Cindy Abidin",
+    "score": 1241
+  },
+  {
+    "name": "Uci Prabowo",
+    "score": 1230
+  },
+  {
+    "name": "Erna Ayu",
+    "score": 1219
+  },
+  {
+    "name": "Krisna Hidayat",
+    "score": 1208
+  },
+  {
+    "name": "Jihan Pratama",
+    "score": 1197
+  },
+  {
+    "name": "Tio Lestari",
+    "score": 1186
+  },
+  {
+    "name": "Siska Suryani",
+    "score": 1175
+  },
+  {
+    "name": "Lutfi Kartika",
+    "score": 1164
+  },
+  {
+    "name": "Irfan Aisyah",
+    "score": 1153
+  },
+  {
+    "name": "Dewi Permana",
+    "score": 1142
+  },
+  {
+    "name": "Pandu Wulandari",
+    "score": 1131
+  },
+  {
+    "name": "Windi Kartika",
+    "score": 1120
+  },
+  {
+    "name": "Lutfi Pratama",
+    "score": 1109
+  },
+  {
+    "name": "Eka Setiawan",
+    "score": 1098
+  },
+  {
+    "name": "Kiki Agustina",
+    "score": 1087
+  },
+  {
+    "name": "Ida Gunawan",
+    "score": 1076
+  },
+  {
+    "name": "Kania Prakoso",
+    "score": 1065
+  },
+  {
+    "name": "Budi Maharani",
+    "score": 1054
+  },
+  {
+    "name": "Dwi Safitri",
+    "score": 1043
+  },
+  {
+    "name": "Umar Rahma",
+    "score": 1032
+  },
+  {
+    "name": "Ovi Rizki",
+    "score": 1021
+  },
+  {
+    "name": "Xaverius Rosiana",
+    "score": 1010
+  },
+  {
+    "name": "Citra Permadi",
+    "score": 999
+  },
+  {
+    "name": "Kania Wijaya",
+    "score": 988
+  },
+  {
+    "name": "Kurniawan Permana",
+    "score": 977
+  },
+  {
+    "name": "Dian Andriana",
+    "score": 966
+  },
+  {
+    "name": "Bunga Safitri",
+    "score": 955
+  },
+  {
+    "name": "Qalila Permata",
+    "score": 944
+  },
+  {
+    "name": "Muhammad Lestari",
+    "score": 933
+  },
+  {
+    "name": "Eka Fauzi",
+    "score": 922
+  },
+  {
+    "name": "Vega Ayu",
+    "score": 911
+  }
 ]

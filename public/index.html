@@ -1,92 +1,156 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PLN Mobile x BNI VA – Leaderboard</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PLN Mobile x BNI VA – Leaderboard</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="src/css/terms.css" />
-  <link rel="stylesheet" href="src/css/leaderboard.css" />
-</head>
-<body>
-  <div class="page-wrap">
-    <div class="container py-4">
-      <div class="text-center">
-        <div class="title-bar d-flex align-items-center justify-content-center gap-2 mb-3">
-          <h1 class="h4 title mb-0">PLN Mobile x BNI VA</h1>
-          <a href="terms_condition.html" class="help-ico" aria-label="Buka deskripsi">?</a>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/css/terms.css" />
+    <link rel="stylesheet" href="src/css/leaderboard.css" />
+  </head>
+  <body>
+    <div class="page-wrap">
+      <div class="container py-4">
+        <div class="text-center">
+          <div
+            class="title-bar d-flex align-items-center justify-content-center gap-2 mb-3"
+          >
+            <h1 class="h4 title mb-0">PLN Mobile x BNI VA</h1>
+            <a
+              href="terms_condition.html"
+              class="help-ico"
+              aria-label="Buka deskripsi"
+              >?</a
+            >
+          </div>
+
+          <div
+            class="d-inline-flex align-items-center gap-2 period-pill"
+            id="periodTrigger"
+            role="button"
+            data-bs-toggle="modal"
+            data-bs-target="#periodModal"
+            aria-expanded="false"
+            aria-controls="periodModal"
+          >
+            <span class="fw-semibold">Periode:</span>
+            <span id="selectedPeriod">Agustus – September 2025</span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M6 9l6 6 6-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
         </div>
 
-        <div class="d-inline-flex align-items-center gap-2 period-pill" role="group" aria-label="Pilih periode leaderboard">
-          <span class="fw-semibold">Periode:</span>
-          <select id="periodSelect" class="form-select form-select-sm" aria-label="Periode leaderboard">
-            <option value="2025-08-09">Agustus – September 2025</option>
-            <option value="2025-09-10">September – Oktober 2025</option>
-            <option value="2025-10-11">Oktober – November 2025</option>
-          </select>
+        <div class="row g-3 podium mt-4 px-2 position-relative">
+          <div class="col-4 position-relative">
+            <div class="podium-card h-100 glow-silver">
+              <div class="rank-badge">2</div>
+              <div class="shine" aria-hidden="true"></div>
+              <div class="avatar">DL</div>
+              <div class="name">Dewi Lestari</div>
+              <div class="score-chip">1899</div>
+            </div>
+          </div>
+
+          <div class="col-4 position-relative">
+            <div class="podium-card primary h-100 glow-gold">
+              <div class="rank-badge">1</div>
+              <div class="shine" aria-hidden="true"></div>
+              <div class="avatar">JS</div>
+              <div class="name">Joko Santoso</div>
+              <div class="score-chip">1900</div>
+            </div>
+          </div>
+
+          <div class="col-4 position-relative">
+            <div class="podium-card h-100 glow-bronze">
+              <div class="rank-badge">3</div>
+              <div class="shine" aria-hidden="true"></div>
+              <div class="avatar">BS</div>
+              <div class="name">Budi Santoso</div>
+              <div class="score-chip">1898</div>
+            </div>
+          </div>
+
+          <img src="src/img/gold.png" alt="" class="gold-img" />
+        </div>
+
+        <div class="board-wrapper-full" id="rankSheet">
+          <div class="sheet-handle" aria-hidden="true"></div>
+          <div class="board" id="boardList"></div>
         </div>
       </div>
 
-      <div class="row g-3 podium mt-4 px-2 position-relative">
-        <div class="col-4 position-relative">
-          <div class="podium-card h-100">
-            <div class="rank-badge">2</div>
-            <div class="avatar">DL</div>
-            <div class="name">—</div>
-            <div class="score-chip">0</div>
+      <div class="winner" role="status" aria-live="polite">
+        <div class="container">
+          <div class="winner-row">
+            <span class="winner-rank">1</span>
+            <div class="winner-person">
+              <span class="avatar-inline">JS</span>
+              <span class="winner-name">—</span>
+            </div>
+            <div class="flex-grow-1"></div>
+            <div class="divider"></div>
+            <div class="winner-score">0</div>
           </div>
         </div>
-
-        <div class="col-4 position-relative">
-          <div class="podium-card primary h-100">
-            <div class="rank-badge">1</div>
-            <div class="avatar">JS</div>
-            <div class="name">—</div>
-            <div class="score-chip">0</div>
-          </div>
-        </div>
-
-        <div class="col-4 position-relative">
-          <div class="podium-card h-100">
-            <div class="rank-badge">3</div>
-            <div class="avatar">BS</div>
-            <div class="name">—</div>
-            <div class="score-chip">0</div>
-          </div>
-        </div>
-
-        <img src="src/img/gold.png" alt="" class="gold-img" />
-      </div>
-
-      <div class="board-wrapper-full mt-4" id="rankSheet">
-        <div class="sheet-handle" aria-hidden="true"></div>
-        <div class="board" id="boardList"></div>
       </div>
     </div>
 
-    <div class="winner" role="status" aria-live="polite">
-      <div class="container">
-        <div class="winner-row">
-          <span class="winner-rank">1</span>
-          <div class="winner-person">
-            <span class="avatar-inline">JS</span>
-            <span class="winner-name">—</span>
+    <div id="snackbar" class="snackbar" role="status" aria-live="polite"></div>
+
+    <div class="modal fade" id="periodModal" tabindex="-1">
+      <div class="modal-dialog modal-bottom-sheet">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5><strong>Periode</strong></h5>
           </div>
-          <div class="flex-grow-1"></div>
-          <div class="divider"></div>
-          <div class="winner-score">0</div>
+          <div class="modal-body p-0">
+            <div class="period-option active" data-value="2025-08-09">
+              Agustus – September 2025
+              <span class="checkmark"></span>
+            </div>
+            <div class="period-option" data-value="2025-09-10">
+              September – Oktober 2025
+              <span class="checkmark"></span>
+            </div>
+            <div class="period-option" data-value="2025-10-11">
+              Oktober – November 2025
+              <span class="checkmark"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="snackbar" class="snackbar" role="status" aria-live="polite"></div>
+    <script src="src/js/leaderboard.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script src="src/js/leaderboard.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const board = document.querySelector(".board-wrapper-full");
+        if (!board) return;
+        const padTop = parseFloat(getComputedStyle(board).paddingTop) || 10;
+        document.documentElement.style.setProperty(
+          "--podium-board-gap",
+          padTop + "px"
+        );
+      });
+    </script>
+  </body>
 </html>
