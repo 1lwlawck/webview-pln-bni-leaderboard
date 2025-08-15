@@ -56,11 +56,26 @@ body{
   overflow:visible;
   padding-bottom:var(--podium-board-gap);
 }
+/* Rank 1 - posisi paling tinggi */
+.podium .col-4:nth-child(2) .rank-badge {
+  top: -28px;
+}
+
+/* Rank 2 - sedikit lebih rendah */
+.podium .col-4:nth-child(1) .rank-badge {
+  top: -22px;
+}
+
+/* Rank 3 - juga sedikit lebih rendah */
+.podium .col-4:nth-child(3) .rank-badge {
+  top: -22px;
+}
+
 .podium-card{
-  position:relative; overflow:visible;
+  position:relative; overflow:hidden;
   background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.03));
   border:1px solid rgba(255,255,255,.18);
-  border-radius:var(--r-lg); padding:var(--gap-2); text-align:center;
+  border-radius:var(--r-lg); padding: 1.5rem var(--gap-2); text-align:center;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.20), 0 8px 24px rgba(0,0,0,.25);
   isolation:isolate; contain:layout;
 }
@@ -71,7 +86,7 @@ body{
 .rank-badge{
   position:absolute;
   left:50%;
-  top:calc(-0.5 * var(--badge-size) - var(--badge-rise));
+  top:calc(-0.2 * var(--badge-size) - var(--badge-rise));
   transform:translateX(-50%);
   width:var(--badge-size); height:var(--badge-size);
   border-radius:50%; display:flex; align-items:center; justify-content:center;
