@@ -20,32 +20,24 @@
     <div class="page-wrap">
       <div class="container py-4">
         <div class="text-center">
-          <div class="title-bar d-flex align-items-center justify-content-center gap-2 mb-3">
+          <div
+            class="title-bar d-flex align-items-center justify-content-center gap-2 mb-3"
+          >
             <h1 class="h4 title mb-0">PLN Mobile x BNI VA</h1>
-            <a href="terms_condition.html" class="help-ico" aria-label="Buka deskripsi">?</a>
+            <a
+              href="terms_condition.html"
+              class="help-ico"
+              aria-label="Buka deskripsi"
+              >?</a
+            >
           </div>
 
           <div
-            class="d-inline-flex align-items-center gap-2 period-pill"
-            id="periodTrigger"
-            role="button"
-            data-bs-toggle="modal"
-            data-bs-target="#periodModal"
-            aria-expanded="false"
-            aria-controls="periodModal"
+            class="d-inline-flex align-items-center gap-2 period-pill disabled"
+            aria-disabled="true"
           >
             <span class="fw-semibold">Periode:</span>
-            <span id="selectedPeriod">Agustus – September 2025</span>
-            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M6 9l6 6 6-6"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+            <span id="selectedPeriod">1 Juli – 14 Agustus 2025</span>
           </div>
         </div>
 
@@ -107,7 +99,7 @@
 
     <div id="snackbar" class="snackbar" role="status" aria-live="polite"></div>
 
-    <div class="modal fade" id="periodModal" tabindex="-1">
+    <!-- <div class="modal fade" id="periodModal" tabindex="-1">
       <div class="modal-dialog modal-bottom-sheet">
         <div class="modal-content">
           <div class="modal-header">
@@ -129,9 +121,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <script src="src/js/leaderboard.js" defer></script>
+    <script type="module" src="/public/src/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
